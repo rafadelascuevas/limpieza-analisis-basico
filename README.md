@@ -1,7 +1,7 @@
 # Limpieza y análisis de datos
 
-## Limpieza
-===========
+## 1. Limpieza
+--------------
 
 ### Hoja de cálculo
 -------------------
