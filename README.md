@@ -36,7 +36,7 @@ Google Spreadsheets no tiene opción de juntar todas las sub-hojas. Pero con un 
 
 - Vamos a *Herramientas --> Editor de Secuencias de comandos...*
 
-- Insertamos el siguiente script, que nos servirá para guardar todas las hojas en CSVs.
+- Le damos nombre al script, por ejemplo "hojas_a_csv". Borramos todo e insertamos el siguiente código, que nos servirá para guardar todas las hojas en CSV.
 
 ```javascript
 function onOpen() {
@@ -99,25 +99,57 @@ function convertRangeToCsvFile_(csvFileName, sheet) {
 }
 ```
 
-- Le damos a **Ejecutar**. Nos pide que guardemos y nombremos el proyecto. Lo llamaremos, por ejemplo, "hojas_a_csv"
+- Le damos a **Guardar** y ejecutamos la función **onOpen**
 
-- Es posible que haya que ejecutar de nuevo. Nos pedirá que demos permisos al script. 
-
-- Una vez ejecutado, volvemos a la pestaña de la hoja de cálculo. Debería aparecer un nuevo menú llamado **csv**. Si el menú no aparece, actualizamos la página. Si el problema persiste probamos a cerrar y abrir de nuevo el navegador.
+- Una vez ejecutado, volvemos a la pestaña de la hoja de cálculo. Debería aparecer un nuevo menú llamado **csv**.
 
 - Seleccionamos **csv-->Export as csv files**. Puede tardar un poco. Un pop up nos avisa del destino de los archivos: una carpeta en el directorio raíz de Google Drive.
 
 ¡Bien! Ya tenemos nuestros archivos csv. 
 
-- Vamos a la carpeta de salida en Drive, seleccionamos y botón derecho *--> Descargar*. Nos sandrá un zip con todos los archivos.
+- Vamos a la carpeta de salida en Drive, seleccionamos y botón derecho **--> Descargar**. Nos sandrá un zip con todos los archivos.
 
 - Descompriminos en nuestro escritorio y le damos un nombre más reconocible a la carpeta.
 
-Vamos a unirlos con **Talend Open Studio for Big Data**.
+Repetir el proceso con los archivos `tarjetas_02.xlsx` y `tarjetas_03.xlsx`.
+
+Tenemos 64 archivos `.csv` Vamos a unirlos con **Talend Open Studio for Big Data**.
 
 ### 1.2. Talend Open Studio for Big Data
 
-Descargar
+Talend es una herramienta muy potente que permite trabajar con datos a través de una interfaz gráfica, sin tener que escribir código. Pero tiene una curva de aprendizaje bastante pronunciada y la cantidad de opciones puede ser abrumadora.
+
+Utiliza **componentes** que se van añadiendo a una mesa de trabajo y se conectan entre sí a modo de diagrama. Esto hace que sea muy flexible a la hora de afrontar un problema. Podemos crear nuestros propios **trabajos** personalizados.
+
+En este caso vamos a crear un **trabajo** que nos permita extraer todos los archivos csv de un directorio y fundirlos en uno.
+
+- Abrir Talend **--> Create a new project**
+
+- **Create a new... --> Job** (o "Trabajo")
+
+- En la pestaña derecha, ***Palette** buscar el componente **tFileList_1**. Arrastrarlo a la mesa de trabajo.
+
+- Hacer lo mismo con los componentes **tFileInputDelimited_1**, **tUnite_1**, **tLogRow_1** y **tFileOutputDelimited_1**
+
+- Conectar de izquierda a derecha todos los componentes. Botón derecho en el primer componente **-->Fila-->Iterate** y pinchamos con el botón izquierdo en el siguiente componente.
+
+Vamos a definir las opciones de entrada y salida de nuestros csv.
+
+- Pinchar en **tFileList_1** y a continuación, abajo, en la pestaña **Component**. Seleccionar el directorio donde tenemos todos los archivos csv.
+
+- Pinchar en **tFileInputDelimited_1** y a continuación, abajo, en la pestaña **Component**. En **Nombre de Archivo/flujo** pulsamos **Ctrl-Espacio** y en el desplegable seleccionamos **tFileList.CURRENT_FILEPATH**
+
+- Como **Separador de Campo** ponemos **","**
+
+- Vamos a definir las columnas que tienen nuestros archivos csv. Pinchamos en **Edit Shcema** y en el signo **+** 9 veces para agregar 9 columnas. Nombramos cada columna con el nombre que tienen en los csv. en **Tipo** (de dato) dejamos todos como **string**. Al aceptar nos preguntará si propaga los cambios al resto de componentes. Le decimos que sí.
+
+- Pinchar en **tLogRow_1** y a continuación, abajo, en la pestaña **Component**. En **Mode** Seleccionar **Table**.
+
+- Pinchar en **tFileOutputDelimited_1** y a continuación, abajo, en la pestaña **Component**. Como **Separador de Campo** ponemos **";"**. Hay que fijarse en **Nombre de Archivo**. En esa ruta aparecerá nuestro archivo csv unificado. Por defecto se llama `out.csv`.
+
+- Finalmente vamos a la pestaña **Run** y ejecutamos el trabajo con **Run**
+
+Ya tenemos nuestro archivo único, `out.csv`. Vamos a limpiarlo con **Open Refine**.
 
 ## 2. Limpiar
 
