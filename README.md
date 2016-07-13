@@ -127,7 +127,7 @@ En este caso vamos a crear un **trabajo** que nos permita extraer todos los arch
 
 - **Create a new... --> Job** (o "Trabajo")
 
-- En la pestaña derecha, ***Palette** buscar el componente **tFileList_1**. Arrastrarlo a la mesa de trabajo.
+- En la pestaña derecha, **Palette** buscar el componente **tFileList_1**. Arrastrarlo a la mesa de trabajo.
 
 - Hacer lo mismo con los componentes **tFileInputDelimited_1**, **tUnite_1**, **tLogRow_1** y **tFileOutputDelimited_1**
 
@@ -141,13 +141,13 @@ Vamos a definir las opciones de entrada y salida de nuestros csv.
 
 - Como **Separador de Campo** ponemos **","**
 
-- Vamos a definir las columnas que tienen nuestros archivos csv. Pinchamos en **Edit Shcema** y en el signo **+** 9 veces para agregar 9 columnas. Nombramos cada columna con el nombre que tienen en los csv. en **Tipo** (de dato) dejamos todos como **string**. Al aceptar nos preguntará si propaga los cambios al resto de componentes. Le decimos que sí.
+- Vamos a definir las columnas que tienen nuestros archivos csv. Pinchamos en **Edit Schema** y en el signo **+** 9 veces para agregar 9 columnas. Nombramos cada columna con el nombre que tienen en los csv. en **Tipo** (de dato) dejamos todos como **string**. Al aceptar nos preguntará si propagamos los cambios al resto de componentes. Le decimos que sí.
 
 - Pinchar en **tLogRow_1** y a continuación, abajo, en la pestaña **Component**. En **Mode** Seleccionar **Table**.
 
-- Pinchar en **tFileOutputDelimited_1** y a continuación, abajo, en la pestaña **Component**. Como **Separador de Campo** ponemos **";"**. Hay que fijarse en **Nombre de Archivo**. En esa ruta aparecerá nuestro archivo csv unificado. Por defecto se llama `out.csv`.
+- Pinchar en **tFileOutputDelimited_1** y a continuación, abajo, en la pestaña **Component**. Como **Separador de Campo** ponemos **";"**. Hay que fijarse en **Nombre de Archivo**. En esa ruta se guardará nuestro archivo csv resultante. Por defecto se llamará `out.csv`.
 
-- Finalmente vamos a la pestaña **Run** y ejecutamos el trabajo con **Run**
+- Finalmente vamos a la pestaña **Run** y ejecutamos el trabajo con el botón **Run**
 
 Ya tenemos nuestro archivo único, `out.csv`. Vamos a limpiarlo con **Open Refine**.
 
