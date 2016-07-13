@@ -1,4 +1,4 @@
-# Limpieza y análisis de datos
+# Taller de limpieza y análisis de datos
 
 ## 1. Limpieza
 
