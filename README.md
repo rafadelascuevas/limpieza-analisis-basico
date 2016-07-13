@@ -10,6 +10,17 @@ Los archivos están en `/datasets/hoja_calculo_tarjetas_black/`.
 
 En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los pasos, puedes ir a la carpeta siguiente y coger el dataset ya tratado.
 
+Necesitaremos:
+
+- [Cuenta de Google](https://accounts.google.com)
+- [Open Refine](http://openrefine.org/)
+
+Descargas opcionales:
+
+- [Talend Open Studio for Big Data](https://www.talend.com/download/talend-open-studio)
+- [Microsoft Excel](https://products.office.com/es-es/excel)
+- [PostgreSQL](https://www.postgresql.org/download/)
+
 ¡Empecemos!
 
 ## 1. Unificar
@@ -25,15 +36,9 @@ Google Spreadsheets no tiene opción de juntar todas las sub-hojas. Pero con un 
 
 - Vamos a *Herramientas --> Editor de Secuencias de comandos...*
 
-- Insertamos el siguiente script, que nos servirá para guardar todas las hojas en CSVs. Hay que pegarlo justo a continuación de `function myFunction() {
+- Insertamos el siguiente script, que nos servirá para guardar todas las hojas en CSVs.
 
 ```javascript
-/*
- * script to export data in all sheets in the current spreadsheet as individual csv files
- * files will be named according to the name of the sheet
- * author: Michael Derazon
-*/
-
 function onOpen() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var csvMenuEntries = [{name: "export as csv files", functionName: "saveAsCSV"}];
@@ -111,6 +116,8 @@ function convertRangeToCsvFile_(csvFileName, sheet) {
 Vamos a unirlos con **Talend Open Studio for Big Data**.
 
 ### 1.2. Talend Open Studio for Big Data
+
+Descargar
 
 ## 2. Limpiar
 
