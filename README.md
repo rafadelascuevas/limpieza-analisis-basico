@@ -1,10 +1,8 @@
 # Limpieza y análisis de datos
 
 ## 1. Limpieza
---------------
 
 ### Hoja de cálculo
--------------------
 
 Vamos a trabajar con un caso real, modificado para poder aplicar varias técnicas de limpieza. 
 Es rara la vez que nos darán una base de datos limpia y estructurada. La mayoría de veces estará fragmentada, mal formateada, con errores... Para poder realizar un buen analisis, tenemos que unificarla, estructurarla y limpiarla.
