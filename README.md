@@ -1,8 +1,8 @@
 # Taller de limpieza y análisis de datos
 
-Vamos a trabajar con un caso real –Las tarjetas *black* de Cajamadrid–, modificado para poder aplicar varias técnicas de limpieza.
+Vamos a trabajar con un caso real –Las tarjetas *black* de Cajamadrid– modificado para poder aplicar varias técnicas de limpieza.
 
-Es bastante común encontrarse con *datasets* fragmentados, mal formateados, con errores... Para poder realizar un buen analisis, tenemos que unificar, estructurar y limpiar.
+Es bastante común encontrarse con *datasets* fragmentados, mal formateados, con errores... Para poder realizar un buen analisis, tenemos que **unificar**, **limpiar** y **estructurar**.
 
 En este caso tenemos tres archivos Excel: `tarjetas_01.xlsx`,`tarjetas_02.xlsx` y `tarjetas_03.xlsx` que contienen los registros de las tarjetas *black* de los ejecutivos de Cajamadrid. Tenemos que unir los tres. Cada archivo tiene varias sub-hojas, lo que dificulta un poco la tarea.
 
@@ -12,7 +12,7 @@ En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los
 
 ¡Empecemos!
 
-## 1. Limpieza
+## 1. Unificar
 
 ### 1.1. Hoja de cálculo
 
@@ -112,15 +112,17 @@ Vamos a unirlos con **Talend Open Studio for Big Data**.
 
 ### 1.2. Talend Open Studio for Big Data
 
-### 1.3. Open Refine
+## 2. Limpiar
 
-## 2. Análisis
+### 2.1. Open Refine
 
-### 2.1. Estructurar
+## 3. Analizar
+
+### 3.1. Estructurar
 
 #### Hoja de cálculo
 
-### 2.2. Preguntar a los datos
+### 3.2. Preguntar a los datos
 
 #### Hoja de cálculo
 
