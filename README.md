@@ -18,7 +18,8 @@ En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los
 
 - Cogemos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a [Google Drive](https://www.google.com/intl/es_es/drive/). 
 
-- Una vez en Drive, lo abrimos con **Google Spreadsheets**.
+- Una vez en Drive, lo abrimos con **Google Spreadsheets** Inline-style: 
+![Hojas de cálculo de Google](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/spreadsheet-icon.png "Hojas de cálculo de Google")
 
 - ¡Problema! Hay varias sub-hojas. Para analizar los datos cómodamente necesitamos una sola tabla que contenga todos los datos.
 Google Spreadsheets no tiene opción de juntar todas las sub-hojas. Pero con un poco de **Javascript** podemos sacar el contenido en varios archivos csv y luego juntarlos.
