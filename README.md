@@ -1,9 +1,10 @@
 # Taller de limpieza y análisis de datos
 
-Vamos a trabajar con un caso real, modificado para poder aplicar varias técnicas de limpieza. 
-Es rara la vez que nos darán una base de datos limpia y estructurada. La mayoría de veces estará fragmentada, mal formateada, con errores... Para poder realizar un buen analisis, tenemos que unificarla, estructurarla y limpiarla.
+Vamos a trabajar con un caso real, modificado para poder aplicar varias técnicas de limpieza.
 
-En este caso tenemos tres archivos Excel: `tarjetas_01.xlsx`,`tarjetas_02.xlsx` y `tarjetas_03.xlsx` con los registros de las tarjetas *black* de ejecutivos de Cajamadrid. Tenemos que unir los tres. Cada archivo tiene varias sub-hojas, lo que dificulta un poco la tarea.
+Es bastante común encontrarse con *datasets* fragmentados, mal formateados, con errores... Para poder realizar un buen analisis, tenemos que unificar, estructurar y limpiar.
+
+En este caso tenemos tres archivos Excel: `tarjetas_01.xlsx`,`tarjetas_02.xlsx` y `tarjetas_03.xlsx` que contienen los registros de las tarjetas *black* de los ejecutivos de Cajamadrid. Tenemos que unir los tres. Cada archivo tiene varias sub-hojas, lo que dificulta un poco la tarea.
 
 Los materiales están en `/datasets/hoja_calculo_tarjetas_black/`. 
 
