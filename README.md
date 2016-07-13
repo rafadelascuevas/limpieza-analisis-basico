@@ -1,9 +1,5 @@
 # Taller de limpieza y análisis de datos
 
-## 1. Limpieza
-
-### 1.1. Hoja de cálculo
-
 Vamos a trabajar con un caso real, modificado para poder aplicar varias técnicas de limpieza. 
 Es rara la vez que nos darán una base de datos limpia y estructurada. La mayoría de veces estará fragmentada, mal formateada, con errores... Para poder realizar un buen analisis, tenemos que unificarla, estructurarla y limpiarla.
 
@@ -14,6 +10,10 @@ Los materiales están en `/datasets/hoja_calculo_tarjetas_black/`.
 En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los pasos, puedes ir a la carpeta siguiente y coger el dataset ya tratado.
 
 ¡Empecemos!
+
+## 1. Limpieza
+
+### 1.1. Hoja de cálculo
 
 - Cogemos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a **Google Drive**. 
 
