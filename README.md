@@ -15,9 +15,9 @@ Los materiales están en `/datasets/hoja_calculo_tarjetas_black/`.
 
 En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los pasos, puedes ir a la carpeta siguiente y coger el dataset ya tratado.
 
-¡Empecemos!
+-¡Empecemos!
 
-Cogemos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a **Google Drive**. 
+-Cogemos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a **Google Drive**. 
 
 Una vez en Drive, lo abrimos con **Google Spreadsheets**.
 
