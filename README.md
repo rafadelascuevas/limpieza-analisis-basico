@@ -1,12 +1,12 @@
 # Taller de limpieza y análisis de datos
 
-Vamos a trabajar con un caso real, modificado para poder aplicar varias técnicas de limpieza.
+Vamos a trabajar con un caso real –Las tarjetas *black* de Cajamadrid–, modificado para poder aplicar varias técnicas de limpieza.
 
 Es bastante común encontrarse con *datasets* fragmentados, mal formateados, con errores... Para poder realizar un buen analisis, tenemos que unificar, estructurar y limpiar.
 
 En este caso tenemos tres archivos Excel: `tarjetas_01.xlsx`,`tarjetas_02.xlsx` y `tarjetas_03.xlsx` que contienen los registros de las tarjetas *black* de los ejecutivos de Cajamadrid. Tenemos que unir los tres. Cada archivo tiene varias sub-hojas, lo que dificulta un poco la tarea.
 
-Los materiales están en `/datasets/hoja_calculo_tarjetas_black/`. 
+Los archivos están en `/datasets/hoja_calculo_tarjetas_black/`. 
 
 En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los pasos, puedes ir a la carpeta siguiente y coger el dataset ya tratado.
 
@@ -16,7 +16,7 @@ En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los
 
 ### 1.1. Hoja de cálculo
 
-- Cogemos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a **Google Drive**. 
+- Cogemos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a [Google Drive](https://www.google.com/intl/es_es/drive/). 
 
 - Una vez en Drive, lo abrimos con **Google Spreadsheets**.
 
