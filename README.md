@@ -2,7 +2,7 @@
 
 ## 1. Limpieza
 
-### Hoja de cálculo
+### 1.1. Hoja de cálculo
 
 Vamos a trabajar con un caso real, modificado para poder aplicar varias técnicas de limpieza. 
 Es rara la vez que nos darán una base de datos limpia y estructurada. La mayoría de veces estará fragmentada, mal formateada, con errores... Para poder realizar un buen analisis, tenemos que unificarla, estructurarla y limpiarla.
@@ -22,9 +22,9 @@ En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los
 - ¡Problema! Hay varias sub-hojas. Para analizar los datos cómodamente necesitamos una sola tabla que contenga todos los datos.
 Google Spreadsheets no tiene opción de juntar todas las sub-hojas. Pero con un poco de **Javascript** podemos sacar el contenido en varios archivos csv y luego juntarlos.
 
-Vamos a *Herramientas --> Editor de Secuencias de comandos...*
+- Vamos a *Herramientas --> Editor de Secuencias de comandos...*
 
-Insertamos el siguiente script, que nos servirá para guardar todas las hojas en CSVs. Hay que pegarlo justo a continuación de `function myFunction() {
+- Insertamos el siguiente script, que nos servirá para guardar todas las hojas en CSVs. Hay que pegarlo justo a continuación de `function myFunction() {
 
 ```javascript
 /*
@@ -93,40 +93,34 @@ function convertRangeToCsvFile_(csvFileName, sheet) {
 }
 ```
 
-Le damos a **Ejecutar**
+- Le damos a **Ejecutar**. Nos pide que guardemos y nombremos el proyecto. Lo llamaremos, por ejemplo, "hojas_a_csv"
 
-Nos pide que guardemos y nombremos el proyecto. Lo llamaremos, por ejemplo, "hojas_a_csv"
+- Es posible que haya que ejecutar de nuevo. Nos pedirá que demos permisos al script. 
 
-Es posible que haya que ejecutar de nuevo. Nos pedirá que demos permisos al script.
+- Una vez ejecutado, volvemos a la pestaña de la hoja de cálculo. Debería aparecer un nuevo menú llamado **csv**. Si el menú no aparece, actualizamos la página. Si el problema persiste probamos a cerrar y abrir de nuevo el navegador.
 
-Una vez ejecutado, volvemos a la pestaña de la hoja de cálculo. Debería aparecer un nuevo menú llamado **csv**. Si el menú no aparece, actualizamos la página. Si el problema persiste probamos a cerrar y abrir de nuevo el navegador.
+- Seleccionamos **csv-->Export as csv files**. Puede tardar un poco. Un pop up nos avisa del destino de los archivos: una carpeta en el directorio raíz de Google Drive.
 
-Seleccionamos **csv-->Export as csv files**. Puede tardar un poco.
+¡Bien! Ya tenemos nuestros archivos csv. 
 
-Un pop up nos avisa del destino de los archivos: una carpeta en el directorio raíz de Google Drive.
+- Vamos a la carpeta de salida en Drive, seleccionamos y botón derecho *--> Descargar*. Nos sandrá un zip con todos los archivos.
 
-¡Bien! Ya tenemos nuestros archivos csv. Vamos a la carpeta de salida en Drive, seleccionamos y botón derecho *--> Descargar*.
-
-Nos sandrá un zip con todos los archivos. Descompriminos en nuestro escritorio y le damos un nombre más reconocible a la carpeta.
+- Descompriminos en nuestro escritorio y le damos un nombre más reconocible a la carpeta.
 
 Vamos a unirlos con **Talend Open Studio for Big Data**.
 
-### Talend Open Studio for Big Data
------------------------------------
+### 1.2. Talend Open Studio for Big Data
 
-### Open Refine
----------------
+### 1.3. Open Refine
 
-## Análisis
-===========
+## 2. Análisis
 
-### Estructurar
----------------
+### 2.1. Estructurar
 
 #### Hoja de cálculo
 
-### Preguntar a los datos
--------------------------
+### 2.2. Preguntar a los datos
+
 #### Hoja de cálculo
 
 ##### Tablas dinámicas
