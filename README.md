@@ -249,7 +249,13 @@ Volvemos a Google Drive. Subimos nuestro archivo limpio y lo abrimos con Spreads
 
 - Vamos a crear columnas con rangos de fecha que nos será útiles para analizar los días, meses y horas en los que se hacía mayor uso de las tarjetas. Creamos columnas llamadas **DIA**, **MES**, **AÑO** y **RANGO HORA**
 
-- La función `=TEXT` (o `TEXTO` si estamos en Excel y tenemos una versión en castellano) convierne un número en texto con un formato predefinido. En la columna **MES** escribimos `=TEXT(B2;"MMMM")`. Estamos diciendo que tome el valor de la celda B2 y de ahí pase el mes a texto, en formato largo: "MMMM".
+- La función `=TEXT` (o `=TEXTO` si estamos en Excel y tenemos una versión en castellano) convierne un número a texto con un formato predefinido. En la columna **MES** escribimos `=TEXT(B2;"MMMM")`. Estamos diciendo que tome el valor de la celda B2 y de ahí pase el mes a texto, en formato largo: "MMMM".
+
+- Hacemos algo similar en la columna **AÑO**: `=TEXT(B2;"AAAA")`
+
+- Y en la columna **DIA**: `=TEXT(B2;"DD")`
+
+- Además, vamos a sacar las horas. En la columna **RANGO HORA** escribimos: `=TEXT(F2;"hh")`
 
 - En la columna de **IMPORTE** tenemos que sustituir el punto decimal por una coma. Seleccionamos la columna entera seleccionamos **Editar --> Buscar y sustituir**
 
