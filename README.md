@@ -178,25 +178,25 @@ Ya tenemos nuestro archivo único, `out.csv`. Vamos a limpiarlo con **Open Refin
 
 ### 2.1. Open Refine
 
-Al ejecutar Refine no se abre ninguna ventana. Lo que hace Refine es montar un servidor local en el puerto 3333. Así que vamos a abrir una pestaña del navegador con la dirección `http://127.0.0.1:3333/`
+Al ejecutar Refine no se abre ninguna ventana. Lo que hace Refine es montar un servidor local en el puerto 3333. Así que vamos a abrir una pestaña del navegador con la dirección `http://127.0.0.1:3333/`.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_01.png "Refine direccion")
 
-- Vamos a la pestaña **Create Project* y seleccionamos nuestro archivo, `out.csv`
+- Vamos a la pestaña **Create Project* y seleccionamos nuestro archivo, `out.csv`.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_02.png "Refine nuevo proyecto")
 
-- Refine previsualiza la tabla. Tenemos que seleccionar la codificación de caracteres: **UTF-8**. Si tenemos un falso encabezamiento de columnas, hay que seleccionar **Ignore first 1 line(s) at beginning of file!**  
+- Refine previsualiza la tabla. Tenemos que seleccionar la codificación de caracteres: **UTF-8**. Si tenemos un falso encabezamiento de columnas, hay que seleccionar **Ignore first 1 line(s) at beginning of file**.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_022.png "Refine previsualizacion tabla")
 
-Para poder analizar nuestra tabla necesitamos que los **elementos que se repiten** (por ejemplo, todas las entradas con un nombre y apellidos) sean **exactamente iguales**. En nuestra tabla hay espacios de más que no vemos, o puntos al final de la entrata. Estos caracteres de más harán que más tarde, al agrupar los elementos distintivos, salgan dos o tres elementos, cuando deberíamos tener uno.
+Para poder analizar nuestra tabla necesitamos que los **elementos que se repiten** (por ejemplo, todas las entradas con un nombre y apellidos) sean **exactamente iguales**. En nuestra tabla hay espacios de más que no vemos, o puntos al final de un nombre. Estos caracteres extra harán que más tarde, al agrupar los elementos para su análisis, aparezcan grupos distintos con entradas que deberían ser iguales.
 
-- Vamos a comprobarlo. Vamos a la columna **NOMBRE**. Pinchamos en el encabezamiento y seleccionamos **Facet** --> Text facet**
+- Vamos a comprobarlo. Vamos a la columna **NOMBRE**. Pinchamos en el encabezamiento y seleccionamos **Facet** --> Text facet**.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_023.png "Refine text facet")
 
-A la izquierda aparecen todas las entradas **distintas** de la columna **NOMBRE**. Al lado de cada una aparece el número de filas que tiene cada una. Por ejemplo: Hay 448 filas con el **NOMBRE** **"ACOSTA CUBERO, JOSE"**
+A la izquierda aparecen todas las entradas **distintas** de la columna **NOMBRE**. Al lado de cada una aparece el número de filas que tiene cada una. Por ejemplo: Hay 448 filas con el **NOMBRE** **"ACOSTA CUBERO, JOSE"**.
 
 Podemos ver que, por ejemplo **"CAFRANGA CAVESTANY, MARIA CARMEN"** aparece dos veces. No debería ser así, vamos a arreglarlo.
 
@@ -204,7 +204,7 @@ Además, tenemos una columna con dos tipos de entradas juntas: **Nombre de comer
 
 ¡Empecemos!
 
-- Lo primero es limpiar las celdas de espacios no deseados. Vamos a la columna **Nombre**. Pinchamos en el encabezamiento y seleccionamos **Edit cells --> Common transforms --> Trim leading and trailing whitespace**
+- Lo primero es limpiar las celdas de espacios no deseados. Vamos a la columna **Nombre**. Pinchamos en el encabezamiento y seleccionamos **Edit cells --> Common transforms --> Trim leading and trailing whitespace**.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_03.png "Refine limpiar espacios")
 
