@@ -170,6 +170,8 @@ Vamos a definir las opciones de entrada y salida de nuestros csv.
 
 - Finalmente vamos a la pestaña **Run** y ejecutamos el trabajo con el botón **Run**
 
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_12.png "Talend ejecutar trabajo")
+
 Ya tenemos nuestro archivo único, `out.csv`. Vamos a limpiarlo con **Open Refine**.
 
 ## 2. Limpiar
