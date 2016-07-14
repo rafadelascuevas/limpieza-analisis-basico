@@ -188,6 +188,8 @@ Al ejecutar Refine no se abre ninguna ventana. Lo que hace Refine es montar un s
 
 - Refine previsualiza la tabla. Tenemos que seleccionar la codificación de caracteres: **UTF-8**. Si tenemos un falso encabezamiento de columnas, hay que seleccionar **Ignore first 1 line(s) at beginning of file!**  
 
+![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_022.png "Refine previsualizacion tabla")
+
 Para poder analizar nuestra tabla necesitamos que los **elementos que se repiten** (por ejemplo, todas las entradas con un nombre y apellidos) sean **exactamente iguales**. En nuestra tabla hay espacios de más que no vemos, o puntos al final de la entrata. Estos caracteres de más harán que más tarde, al agrupar los elementos distintivos, salgan dos o tres elementos, cuando deberíamos tener uno.
 
 - Vamos a comprobarlo. Vamos a la columna **NOMBRE**. Pinchamos en el encabezamiento y seleccionamos **Facet** --> Text facet**
