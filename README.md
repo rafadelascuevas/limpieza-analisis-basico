@@ -125,11 +125,13 @@ En este caso vamos a crear un **trabajo** que nos permita extraer todos los arch
 
 - Abrir Talend **--> Create a new project**
 
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_01.png "Inicio de Talend")
+
 - **Create a new... --> Job** (o "Trabajo")
 
-- En la pestaña derecha, **Palette** buscar el componente **tFileList_1**. Arrastrarlo a la mesa de trabajo.
+- En la pestaña derecha, **Palette** buscar el componente **tFileList**. Arrastrarlo a la mesa de trabajo.
 
-- Hacer lo mismo con los componentes **tFileInputDelimited_1**, **tUnite_1**, **tLogRow_1** y **tFileOutputDelimited_1**
+- Hacer lo mismo con los componentes **tFileInputDelimited**, **tUnite**, **tLogRow** y **tFileOutputDelimited**
 
 - Conectar de izquierda a derecha todos los componentes. Botón derecho en el primer componente **-->Fila-->Iterate** y pinchamos con el botón izquierdo en el siguiente componente.
 
@@ -140,6 +142,8 @@ Vamos a definir las opciones de entrada y salida de nuestros csv.
 - Pinchar en **tFileInputDelimited_1** y a continuación, abajo, en la pestaña **Component**. En **Nombre de Archivo/flujo** pulsamos **Ctrl-Espacio** y en el desplegable seleccionamos **tFileList.CURRENT_FILEPATH**
 
 - Como **Separador de Campo** ponemos **","**
+
+- Marcamos la casilla **opciones csv**. Es importante, porque si no definimos bien los separadores de fila y columna de nuestros csv, se pueden perder datos.
 
 - Vamos a definir las columnas que tienen nuestros archivos csv. Pinchamos en **Edit Schema** y en el signo **+** 9 veces para agregar 9 columnas. Nombramos cada columna con el nombre que tienen en los csv. en **Tipo** (de dato) dejamos todos como **string**. Al aceptar nos preguntará si propagamos los cambios al resto de componentes. Le decimos que sí.
 
