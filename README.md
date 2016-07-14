@@ -19,9 +19,9 @@ Necesitaremos:
 
 Descargas opcionales:
 
-- [Talend Open Studio for Big Data](https://www.talend.com/download/talend-open-studio)
-- [Microsoft Excel](https://products.office.com/es-es/excel)
-- [PostgreSQL](https://www.postgresql.org/download/)
+- [Talend Open Studio for Big Data](https://www.talend.com/download/talend-open-studio) (gratuito)
+- [Microsoft Excel](https://products.office.com/es-es/excel) (de pago)
+- [PostgreSQL](https://www.postgresql.org/download/) (gratuito)
 
 ¡Empecemos!
 
