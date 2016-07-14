@@ -29,14 +29,14 @@ Descargas opcionales:
 
 ### 1.1. Hoja de cálculo
 
-- Cogemos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a [Google Drive](https://www.google.com/intl/es_es/drive/). 
+- Bajamos el archivo `/datasets/hoja_calculo_tarjetas_black/01_originales/tarjetas_01.xlsx` y lo subimos a [Google Drive](https://www.google.com/intl/es_es/drive/). 
 
 - Una vez en Drive, lo abrimos con **Google Spreadsheets** ![Hojas de cálculo de Google](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/spreadsheet-icon.png "Hojas de cálculo de Google")
 
 - ¡Problema! Hay varias sub-hojas. Para analizar los datos cómodamente necesitamos una sola tabla que contenga todos los datos.
 Google Spreadsheets no tiene opción de juntar todas las sub-hojas. Pero con un poco de **Javascript** podemos sacar el contenido en varios archivos csv y luego juntarlos.
 
-- Vamos a *Herramientas --> Editor de Secuencias de comandos...*
+- Vamos a **Herramientas --> Editor de Secuencias de comandos...**
 
 - Le damos nombre al script, por ejemplo "hojas_a_csv". Borramos todo e insertamos el siguiente código, que nos servirá para guardar todas las hojas en CSV.
 
@@ -184,7 +184,7 @@ Al ejecutar Refine no se abre ninguna ventana. Lo que hace Refine es montar un s
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_01.png "Refine direccion")
 
-- Vamos a la pestaña **Create Project* y seleccionamos nuestro archivo, `out.csv`.
+- Vamos a la pestaña **Create Project** y seleccionamos nuestro archivo, `out.csv`.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_02.png "Refine nuevo proyecto")
 
@@ -214,9 +214,9 @@ Además, tenemos una columna con dos tipos de entradas juntas: **Nombre de comer
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_04.png "Refine Cluster and edit")
 
-- Cluster & edit reconoce los patrones de caracteres parecidos y sugiere fusiones. Comprobamos que las sugerencias son correctas. Pinchamos en **Select all** y a continuación en **Merge selected & re.cluster**. Si todo va bien, en un segundo reconocimiento todo está limpio. Refine utiliza distintos métodos de reconocimiento de patrones. El que viene por defecto nos sirve en este caso, pero a veces el patró es más complejo.
+- Cluster & edit reconoce los patrones de caracteres parecidos y sugiere fusiones. Comprobamos que las sugerencias son correctas. Pinchamos en **Select all** y a continuación en **Merge selected & re-cluster**. Si todo va bien, en un segundo reconocimiento todo está limpio. Refine utiliza distintos métodos de reconocimiento de patrones. El que viene por defecto nos sirve en este caso, pero a veces el patrón es más complejo.
 
-- Ahora vamos a separar esa columna con dos tipos de entradas juntas. Pinchamos en el encabezado **Nombre_Comerdio_y_Actividad** y seleccionamos **Edit column --> Split into several columns**
+- Ahora vamos a separar esa columna con dos tipos de entradas juntas. Pinchamos en el encabezado **Nombre_Comercio_y_Actividad** y seleccionamos **Edit column --> Split into several columns**
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_05.png "Refine separar columnas1")
 
@@ -231,15 +231,21 @@ Además, tenemos una columna con dos tipos de entradas juntas: **Nombre de comer
 
 ## 3. Analizar
 
-
-
 ### 3.1. Estructurar
+
+Para realizar un buen análisis es muy importante que los datos estén bien estratificados. 
+
+Lo principal: "Pensar en vertical". Cada columna aporta una capa de conocimiento. Cuanto más concreto, mejor.
+
+Por ejemplo: Tenemos una columna con la fecha completa de cada transacción. Pero si queremos un análisis más profundo, podemos separar esa columna en días, meses y años. 
 
 #### Hoja de cálculo
 
 Volvemos a Google Drive. Subimos nuestro archivo limpio y lo abrimos con Spreadsheets.
 
-- Buena práctica: Añadimos al nombre de nuestro archivo **_ORIGINAL** y creamos una copia con el añadido **_TRABAJO**. Así, si comentemos errores podemos volver a la hoja original. 
+- Buena práctica 1: Añadimos al nombre de nuestro archivo **_ORIGINAL** y creamos una copia con el añadido **_TRABAJO**. Así, si comentemos errores podemos volver a la hoja original. 
+
+- Buena práctica 2: Añadimos una columna con el encabezado **ID**. Ponemos un 1 en la primera fila, y rellenamos la serie automáticamente.
 
 - Vamos a crear columnas con rangos de fecha que nos será útiles para analizar los días, meses y horas en los que se hacía mayor uso de las tarjetas. Creamos columnas llamadas **DIA**, **MES**, **AÑO** y **RANGO HORA**
 
