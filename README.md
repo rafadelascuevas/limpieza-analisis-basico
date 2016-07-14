@@ -255,7 +255,7 @@ Volvemos a Google Drive. Subimos nuestro archivo limpio y lo abrimos con Spreads
 
 - Y en la columna **DIA**: `=TEXT(B2;"DD")`
 
-- Además vamos a sacar las horas. Pero los datos no están en formato de hora *hh:mm:ss* por lo que tenemos que tenemos que sustituir el punto `.` por dos puntos `:`. Seleccionamos la columna entera y damos a **Editar --> Buscar y sustituir**
+- Además vamos a sacar las horas. Pero los datos no están en formato de hora *hh:mm:ss* por lo que tenemos que sustituir el punto `.` por dos puntos `:`. Seleccionamos la columna entera y damos a **Editar --> Buscar y sustituir**
 
 - Ahora sí, En la columna **RANGO HORA** escribimos: `=TEXT(F2;"hh")`
 
