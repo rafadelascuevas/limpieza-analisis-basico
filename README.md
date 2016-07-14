@@ -8,7 +8,7 @@ Es bastante común encontrarse con *datasets* fragmentados, mal formateados, con
 
 En este caso tenemos tres archivos Excel: `tarjetas_01.xlsx`,`tarjetas_02.xlsx` y `tarjetas_03.xlsx` que contienen los registros de las tarjetas *black* de los ejecutivos de Cajamadrid. Tenemos que unir los tres. Cada archivo tiene varias sub-hojas, lo que dificulta un poco la tarea.
 
-Los archivos están en `/datasets/hoja_calculo_tarjetas_black/`. 
+Los archivos están en [`/datasets/hoja_calculo_tarjetas_black/`](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/datasets/hoja_calculo_tarjetas_black/). 
 
 En este directorio hay varias carpetas numeradas. Si te pierdes en alguno de los pasos, puedes ir a la carpeta siguiente y coger el dataset ya tratado.
 
@@ -50,28 +50,28 @@ function onOpen() {
 function saveAsCSV() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheets = ss.getSheets();
-  // create a folder from the name of the spreadsheet
+  // crea un directorio con el nombre de la hoja
   var folder = DriveApp.createFolder(ss.getName().toLowerCase().replace(/ /g,'_') + '_csv_' + new Date().getTime());
   for (var i = 0 ; i < sheets.length ; i++) {
     var sheet = sheets[i];
-    // append ".csv" extension to the sheet name
+    // añade la extension ".csv" al nombre de la hoja
     fileName = sheet.getName() + ".csv";
-    // convert all available sheet data to csv format
+    // convierte todos los datos disponibles de la hoja a formato csv
     var csvFile = convertRangeToCsvFile_(fileName, sheet);
-    // create a file in the Docs List with the given name and the csv data
+    // crea un archivo con el nombre y los datos csv
     folder.createFile(fileName, csvFile);
   }
   Browser.msgBox('Files are waiting in a folder named ' + folder.getName());
 }
 
 function convertRangeToCsvFile_(csvFileName, sheet) {
-  // get available data range in the spreadsheet
+  // toma el rango disponible de datos en la hoha de calculo
   var activeRange = sheet.getDataRange();
   try {
     var data = activeRange.getValues();
     var csvFile = undefined;
 
-    // loop through the data in the range and build a string with the csv data
+    // hace un loop en el rango de los datos y crea un string con los datos csv
     if (data.length > 1) {
       var csv = "";
       for (var row = 0; row < data.length; row++) {
@@ -81,8 +81,8 @@ function convertRangeToCsvFile_(csvFileName, sheet) {
           }
         }
 
-        // join each row's columns
-        // add a carriage return to end of each row, except for the last one
+        // une las columnas de cada fila
+        // añade retorno de carro al final de cada fila, excepto la ultima
         if (row < data.length-1) {
           csv += data[row].join(",") + "\r\n";
         }
@@ -247,7 +247,7 @@ Volvemos a Google Drive. Subimos nuestro archivo limpio y lo abrimos con Spreads
 
 ### 3.2. Preguntar a los datos
 
-- Para *interrogar* a los datos usamos tablas dinámicas. Hay que empezar por lo general (¿cuanto dinero se han gastadoen total?, ¿quién ha gastado más dinero?) a lo concreto (¿Quién hizo el cargo más grande? ¿En qué días se usaron más las tarjetas?)
+- Para *interrogar* a los datos usamos tablas dinámicas. Hay que empezar por lo general (¿cuanto dinero se han gastado en total?, ¿quién ha gastado más dinero?) a lo concreto (¿Quién hizo el cargo más grande? ¿En qué días se usaron más las tarjetas?)
 
 #### Hoja de cálculo
 
@@ -263,4 +263,4 @@ Excel tiene un límite de 1,048,576 filas y 16,384 columnas. Para analizar bases
 
 ##### PostgreSQL
 
-SQL es un lenguaje declarativo para hacer consultas y modificaciones en bases de datos. Si tenemos tiempo, practicaremos unas *queries* a la base de datos del ministerio de Agricultura que agrupa todas las playas de España. El archivo está en `datasets/sql_playas`
+SQL es un lenguaje declarativo para hacer consultas y modificaciones en bases de datos. Si tenemos tiempo, practicaremos unas *queries* a la base de datos del ministerio de Agricultura que agrupa todas las playas de España. El archivo está en `datasets/sql_playas/playas.sql`
