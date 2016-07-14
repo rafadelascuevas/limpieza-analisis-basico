@@ -158,9 +158,15 @@ Vamos a definir las opciones de entrada y salida de nuestros csv.
 
 - Vamos a definir las columnas que tienen nuestros archivos csv. Pinchamos en **Edit Schema** y en el signo **+** 9 veces para agregar 9 columnas. Nombramos cada columna con el nombre que tienen en los csv. en **Tipo** (de dato) dejamos todos como **string**. Al aceptar nos preguntará si propagamos los cambios al resto de componentes. Le decimos que sí.
 
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_09.png "Talend agregar columnas")
+
 - Pinchar en **tLogRow_1** y a continuación, abajo, en la pestaña **Component**. En **Mode** Seleccionar **Table**.
 
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_10.png "Talend opciones tLogRow")
+
 - Pinchar en **tFileOutputDelimited_1** y a continuación, abajo, en la pestaña **Component**. Como **Separador de Campo** ponemos **";"**. Hay que fijarse en **Nombre de Archivo**. En esa ruta se guardará nuestro archivo csv resultante. Por defecto se llamará `out.csv`.
+
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_11.png "Talend opciones tFileOutputDelimited")
 
 - Finalmente vamos a la pestaña **Run** y ejecutamos el trabajo con el botón **Run**
 
