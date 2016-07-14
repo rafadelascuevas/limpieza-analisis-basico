@@ -247,7 +247,7 @@ Volvemos a Google Drive. Subimos nuestro archivo limpio y lo abrimos con Spreads
 
 - Buena práctica 2: Añadimos una columna con el encabezado **ID**. Ponemos un 1 en la primera fila, y rellenamos la serie automáticamente.
 
-- Vamos a crear columnas con rangos de fecha que nos será útiles para analizar los días, meses y horas en los que se hacía mayor uso de las tarjetas. Creamos columnas llamadas **DIA**, **MES**, **AÑO** y **RANGO HORA**
+- Vamos a crear columnas con rangos de fecha que nos serán útiles para analizar los días, meses y horas en los que se hacía mayor uso de las tarjetas. Creamos columnas llamadas **DIA**, **MES**, **AÑO** y **RANGO HORA**
 
 - La función `=TEXT` (o `=TEXTO` si estamos en Excel y tenemos una versión en castellano) convierne un número a texto con un formato predefinido. En la columna **MES** escribimos `=TEXT(B2;"MMMM")`. Estamos diciendo que tome el valor de la celda B2 y de ahí pase el mes a texto, en formato largo: "MMMM".
 
