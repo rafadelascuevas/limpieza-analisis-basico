@@ -129,17 +129,28 @@ En este caso vamos a crear un **trabajo** que nos permita extraer todos los arch
 
 - **Create a new... --> Job** (o "Trabajo")
 
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_02.png "Talend nuevo trabajo")
+
 - En la pestaña derecha, **Palette** buscar el componente **tFileList**. Arrastrarlo a la mesa de trabajo.
+
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_03.png "Talend buscar componentes")
 
 - Hacer lo mismo con los componentes **tFileInputDelimited**, **tUnite**, **tLogRow** y **tFileOutputDelimited**
 
 - Conectar de izquierda a derecha todos los componentes. Botón derecho en el primer componente **-->Fila-->Iterate** y pinchamos con el botón izquierdo en el siguiente componente.
 
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_05.png "Talend conectar componentes1")
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_06.png "Talend conectar componentes2")
+
 Vamos a definir las opciones de entrada y salida de nuestros csv.
 
 - Pinchar en **tFileList_1** y a continuación, abajo, en la pestaña **Component**. Seleccionar el directorio donde tenemos todos los archivos csv.
 
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_07.png "Talend opciones tFileList")
+
 - Pinchar en **tFileInputDelimited_1** y a continuación, abajo, en la pestaña **Component**. En **Nombre de Archivo/flujo** pulsamos **Ctrl-Espacio** y en el desplegable seleccionamos **tFileList.CURRENT_FILEPATH**
+
+![Talend](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/talend_08.png "Talend opciones tFileInputDelimited")
 
 - Como **Separador de Campo** ponemos **","**
 
