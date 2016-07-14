@@ -1,5 +1,7 @@
 # Taller de limpieza y análisis de datos
 
+Un conjunto de técnicas y consejos básicos para periodistas de datos que se enfrentan por primera vez a *datasets* sin estructurar.
+
 Vamos a trabajar con un caso real –Las tarjetas *black* de Cajamadrid– modificado para poder aplicar varias técnicas de limpieza.
 
 Es bastante común encontrarse con *datasets* fragmentados, mal formateados, con errores... Para poder realizar un buen analisis, antes tenemos que **unificar**, **limpiar** y **estructurar**.
@@ -192,7 +194,7 @@ Al ejecutar Refine no se abre ninguna ventana. Lo que hace Refine es montar un s
 
 Para poder analizar nuestra tabla necesitamos que los **elementos que se repiten** (por ejemplo, todas las entradas con un nombre y apellidos) sean **exactamente iguales**. En nuestra tabla hay espacios de más que no vemos, o puntos al final de un nombre. Estos caracteres extra harán que más tarde, al agrupar los elementos para su análisis, aparezcan grupos distintos con entradas que deberían ser iguales.
 
-- Vamos a comprobarlo. Vamos a la columna **NOMBRE**. Pinchamos en el encabezamiento y seleccionamos **Facet** --> Text facet**.
+- Vamos a comprobarlo. Vamos a la columna **NOMBRE**. Pinchamos en el encabezamiento y seleccionamos **Facet --> Text facet**.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_023.png "Refine text facet")
 
@@ -204,25 +206,61 @@ Además, tenemos una columna con dos tipos de entradas juntas: **Nombre de comer
 
 ¡Empecemos!
 
-- Lo primero es limpiar las celdas de espacios no deseados. Vamos a la columna **Nombre**. Pinchamos en el encabezamiento y seleccionamos **Edit cells --> Common transforms --> Trim leading and trailing whitespace**.
+- Lo primero es limpiar las celdas de espacios no deseados. Vamos a la columna **NOMBRE**. Pinchamos en el encabezamiento y seleccionamos **Edit cells --> Common transforms --> Trim leading and trailing whitespace**. Repetimos el proceso en todas las columnas.
 
 ![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_03.png "Refine limpiar espacios")
 
-- Ahora vamos 
+- Ahora vamos a editar masivamente los nombres en la columna **NOMBRE** para unificar los que no son iguales. Para ello usaremos **Edit cells --> Cluster and edit**
+
+![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_04.png "Refine Cluster and edit")
+
+- Cluster & edit reconoce los patrones de caracteres parecidos y sugiere fusiones. Comprobamos que las sugerencias son correctas. Pinchamos en **Select all** y a continuación en **Merge selected & re.cluster**. Si todo va bien, en un segundo reconocimiento todo está limpio. Refine utiliza distintos métodos de reconocimiento de patrones. El que viene por defecto nos sirve en este caso, pero a veces el patró es más complejo.
+
+- Ahora vamos a separar esa columna con dos tipos de entradas juntas. Pinchamos en el encabezado **Nombre_Comerdio_y_Actividad** y seleccionamos **Edit column --> Split into several columns**
+
+![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_05.png "Refine separar columnas1")
+
+- Tenemos varias opciones para separar la columna. En nuestro caso, hay un patrón de caracteres que separa un concepto de otro: tres guiones bajos. Así que vamos a poner tres guiones bajos en el campo **Separator**. 
+
+![Refine](https://github.com/rafadelascuevas/limpieza-analisis-basico/blob/master/img/refine_06.png "Refine separar columnas2")
+
+- Podemos aplicar más transformaciones. Por ejemplo, separar las columnas de los apellidos y el nombre por la coma. Alternar el nombre de las columnas, sustituir caracteres de forma masiva...
+
+- Cuando nuestra tabla esté limpia, exportamos. Vamos a guardar en formato Excel para poder trabajar indistintamente en Excel o Google Spreadsheets. **Export --> Excel**
+
 
 ## 3. Analizar
+
+
 
 ### 3.1. Estructurar
 
 #### Hoja de cálculo
 
+Volvemos a Google Drive. Subimos nuestro archivo limpio y lo abrimos con Spreadsheets.
+
+- Buena práctica: Añadimos al nombre de nuestro archivo **_ORIGINAL** y creamos una copia con el añadido **_TRABAJO**. Así, si comentemos errores podemos volver a la hoja original. 
+
+- Vamos a crear columnas con rangos de fecha que nos será útiles para analizar los días, meses y horas en los que se hacía mayor uso de las tarjetas. Creamos columnas llamadas **DIA**, **MES**, **AÑO** y **RANGO HORA**
+
+- En la columna de **IMPORTE** tenemos que sustituir el punto decimal por una coma. Seleccionamos la columna entera seleccionamos **Editar --> Buscar y sustituir**
+
 ### 3.2. Preguntar a los datos
+
+- Para *interrogar* a los datos usamos tablas dinámicas. Hay que empezar por lo general (¿cuanto dinero se han gastadoen total?, ¿quién ha gastado más dinero?) a lo concreto (¿Quién hizo el cargo más grande? ¿En qué días se usaron más las tarjetas?)
 
 #### Hoja de cálculo
 
 ##### Tablas dinámicas
 
+- Colocamos en cursor en la casilla **A1**. **Vamos al menú Datos --> Tabla dinámica**
+
+- En el apartado **Valores** seleccionamos **IMPORTE**. A continuación, vamos probando conjuntos de datos en los apartados **Filas** y **columnas**
+
 #### Base de datos
 
-Para pasar de formato access de Microsoft a mac: primero, descargar [ActualOCB](https://www.macupdate.com/app/mac/20360/actual-odbc-driver-for-access/download)
+Excel tiene un límite de 1,048,576 filas y 16,384 columnas. Para analizar bases de datos grandes tenemos que utilizar herramientas de tratamiento de bases de datos. Existen varios lenguajes de bases de datos relacionales. El más extendido es SQL, así que vamos a utilizar una herramienta open source gratuita: [PostgreSQL](https://www.postgresql.org/download/).
 
+##### PostgreSQL
+
+SQL es un lenguaje declarativo para hacer consultas y modificaciones en bases de datos. Si tenemos tiempo, practicaremos unas *queries* a la base de datos del ministerio de Agricultura que agrupa todas las playas de España. El archivo está en `datasets/sql_playas`
