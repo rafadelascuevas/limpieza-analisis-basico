@@ -271,10 +271,6 @@ Volvemos a Google Drive. Subimos nuestro archivo limpio y lo abrimos con Spreads
 
 - En el apartado **Valores** seleccionamos **IMPORTE**. A continuación, vamos probando conjuntos de datos en los apartados **Filas** y **columnas**
 
-#### Base de datos
+#### De aquí al infinito! 
 
-Excel tiene un límite de 1,048,576 filas y 16,384 columnas. Para analizar bases de datos grandes tenemos que utilizar herramientas de tratamiento de bases de datos. Existen varios lenguajes de bases de datos relacionales. El más extendido es SQL, así que vamos a utilizar una herramienta open source gratuita: [PostgreSQL](https://www.postgresql.org/download/).
-
-##### PostgreSQL
-
-SQL es un lenguaje declarativo para hacer consultas y modificaciones en bases de datos. Si tenemos tiempo, practicaremos unas *queries* a la base de datos del ministerio de Agricultura que agrupa todas las playas de España. El archivo está en `datasets/sql_playas/playas.sql`
+Excel tiene un límite de 1,048,576 filas y 16,384 columnas. Para analizar bases de datos grandes tenemos que pensar en herramientas específicas para estructurar grandes bases de datos. Por ejemplo, SQL. Y lenguajes de programación especializados en tratamiento de datos, como R. Pero eso será otro día!
